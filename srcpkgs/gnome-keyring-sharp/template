@@ -1,0 +1,24 @@
+# Template file for 'gnome-keyring-sharp'
+pkgname=gnome-keyring-sharp
+version=1.0.2
+revision=1
+wrksrc="gnome-keyring-sharp-gnome-keyring-sharp-${version}"
+build_style=gnu-configure
+hostmakedepends="libtool pkg-config autoconf automake"
+makedepends="gtk-sharp-2 glib-devel libgnome-keyring-devel"
+depends="libgnome-keyring gtk-sharp-2"
+short_desc=".NET language bindings to the Gnome Keyring APIs"
+maintainer="venv21 <venv21@gmail.com>"
+homepage="http://github.com/mono/gnome-keyring-sharp"
+license="MIT"
+distfiles="https://github.com/mono/${pkgname}/archive/${pkgname}-${version}.tar.gz"
+make_build_args="all"
+checksum=4e301280949444a96717a9f888b85fd9ad2d6df77dbcf5e0ea637800f7ce38cd
+
+pre_configure() {
+	sh ./autogen.sh
+}
+
+post_install() {
+	vlicense COPYING
+}

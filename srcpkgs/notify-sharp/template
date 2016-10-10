@@ -1,0 +1,24 @@
+# Template file for 'notify-sharp'
+pkgname=notify-sharp
+version=0.4.1
+revision=1
+wrksrc="${pkgname}-${version}"
+build_style=gnu-configure
+hostmakedepends="libtool pkg-config autoconf automake"
+makedepends="gtk-sharp-2 mono dbus-sharp dbus-sharp-glib glib-devel libgnome-keyring-devel"
+depends="gtk-sharp-2"
+short_desc="C# D-Bus client library for desktop notifications"
+maintainer="venv21 <venv21@gmail.com>"
+homepage="https://www.meebey.net"
+license="MIT"
+distfiles="https://www.meebey.net/projects/${pkgname}/downloads/${pkgname}-${version}.tar.gz"
+make_build_args="all"
+checksum=4125998131373b28e92578d6af24a0762fbe654b7cd1998cbcc2a16d5fd752f4
+
+pre_configure() {
+	autoreconf -fi
+}
+
+post_install() {
+	vlicense COPYING
+}

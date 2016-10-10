@@ -1,0 +1,11 @@
+--- ./configure.in
++++ ./configure.in
+@@ -37,7 +37,7 @@ AC_SUBST(GLIB_SHARP_LIBS)
+ AC_SUBST(GLIB_SHARP_CFLAGS)
+ 
+ AC_PATH_PROG(RUNTIME, mono, no)
+-AC_PATH_PROG(CSC, gmcs, no)
++AC_PATH_PROG(CSC, mcs, no)
+ LIB_PREFIX=.so
+ LIB_SUFFIX=
+ 

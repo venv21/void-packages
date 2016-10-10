@@ -1,0 +1,23 @@
+# Template file for 'mono-addins'
+pkgname=mono-addins
+version=1.3
+revision=1
+wrksrc="${pkgname}-${pkgname}-${version}"
+build_style=gnu-configure
+hostmakedepends="libtool pkg-config autoconf automake"
+makedepends="gtk-sharp-2 mono gtk-sharp-2 glib-devel libgnome-keyring-devel"
+depends="gtk-sharp-2"
+short_desc="Mono addins"
+maintainer="venv21 <venv21@gmail.com>"
+homepage="https://github.com/mono/mono-addins"
+license="MIT"
+distfiles="${homepage}/archive/${pkgname}-${version}.tar.gz"
+checksum=e2c4db9fd12087b795dd03a035c6ab8daffe157694d98dcfe227067913db5580
+
+pre_configure() {
+	sh ./autogen.sh
+}
+
+post_install() {
+	vlicense COPYING
+}

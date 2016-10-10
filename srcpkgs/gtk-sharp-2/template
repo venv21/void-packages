@@ -1,0 +1,23 @@
+# Template file for 'gtk-sharp-2'
+pkgname=gtk-sharp-2
+version=2.12.41
+revision=1
+wrksrc=gtk-sharp-${version}
+only_for_archs="i686 x86_64"
+lib32disabled=yes
+build_style=gnu-configure
+configure_args="--disable-static"
+hostmakedepends="pkg-config automake libtool autoconf"
+makedepends="mono gtk+-devel libglade-devel"
+depends="mono gtk+ libglade"
+maintainer="venv21 <venv21@gmail.com>"
+homepage="http://www.mono-project.com/GtkSharp"
+license="LGPL-2.1"
+short_desc="Graphical User Interface Toolkit for mono and .Net (Gtk#)"
+distfiles="https://github.com/mono/gtk-sharp/archive/${version}.tar.gz"
+checksum=6ca32c148b24f25c3f581f1057ce9efbd8759f2809029c0c70d82183092d6dd0
+
+pre_configure() {
+	sh ./bootstrap-2.12
+}
+

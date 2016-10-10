@@ -1,0 +1,14 @@
+# Template file for 'docky'
+pkgname=docky
+version=2.2.1.1
+revision=1
+build_style=gnu-configure
+hostmakedepends="pkg-config intltool"
+makedepends="GConf-devel gio-sharp gtk-sharp-2 mono gkeyfile-sharp gnome-keyring-sharp gnome-sharp dbus-sharp dbus-sharp-glib mono-addins notify-sharp librsvg-devel libwnck2-devel"
+depends="gtk-sharp-2 gnome-keyring-sharp gkeyfile-sharp gio-sharp gnome-sharp dbus-sharp dbus-sharp-glib notify-sharp librsvg libwnck2 mono-addins"
+short_desc="Docky is a full fledged dock application"
+maintainer="venv21 <venv21@gmail.com>"
+homepage="https://launchpad.net/docky"
+license="GPL-3"
+distfiles="https://launchpad.net/${pkgname}/2.2/${version}/+download/docky-${version}.tar.xz"
+checksum=3759c052a375dea4ab462669896d92acc6eb497197dd5a73ff30527d668dfbc6

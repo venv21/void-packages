@@ -1,0 +1,15 @@
+# Template file for 'hal-flash'
+pkgname=hal-flash
+version=0.3.3
+revision=1
+only_for_archs="i686 x86_64"
+build_style=gnu-configure
+hostmakedepends="pkg-config intltool"
+makedepends="gobject-introspection"
+depends="dbus udisks2"
+short_desc="A libhal stub library forwarding to UDisks specifically to play DRM content"
+maintainer="venv21 <venv21@gmail.com>"
+license="GPL-2"
+homepage="https://github.com/cshorler/hal-flash/"
+distfiles="https://github.com/cshorler/${pkgname}/archive/v${version}.tar.gz"
+checksum=c69b96251acb8c6c9d4d293b77fdd3026eceabdb2e13ce7c03305790425f8937

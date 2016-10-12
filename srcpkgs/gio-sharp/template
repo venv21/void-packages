@@ -1,0 +1,25 @@
+# Template file for 'gio-sharp'
+pkgname=gio-sharp
+version=0.3
+revision=1
+build_style=gnu-configure
+hostmakedepends="libtool intltool pkg-config autoconf automake"
+makedepends="gtk-sharp-2 mono gnome-sharp glib-devel"
+depends="gtk-sharp-2 gnome-sharp"
+only_for_archs="i686 x86_64"
+short_desc="Bindings to Glib's libgio"
+maintainer="venv21 <venv21@gmail.com>"
+homepage="https://github.com/mono/gio-sharp"
+license="MIT"
+distfiles="https://github.com/mono/gio-sharp/archive/${version}.tar.gz"
+make_build_args="all"
+disable_parallel_build="yes"
+checksum=25142dd9f2cfa984acf10a579fb771612f46ae4c089b65e059d72a403a2fc1d5
+
+pre_configure() {
+	sh ./autogen-2.22.sh
+}
+
+post_install() {
+	vlicense COPYING
+}

@@ -1,0 +1,20 @@
+# Template file for 'gkeyfile-sharp'
+pkgname=gkeyfile-sharp
+version=0.3
+revision=1
+build_style=gnu-configure
+hostmakedepends="pkg-config autoconf automake"
+makedepends="gtk-sharp-2 gnome-sharp glib-devel mono"
+depends="gtk-sharp-2 gnome-sharp"
+wrksrc="gkeyfile-sharp-GKEYFILE_SHARP_0_1"
+short_desc="A mono binding to GKeyFile"
+maintainer="venv21 <venv21@gmail.com>"
+homepage="http://github.com/mono/gkeyfile-sharp"
+license="LGPL-2.1"
+distfiles="https://github.com/mono/gkeyfile-sharp/archive/GKEYFILE_SHARP_0_1.tar.gz"
+make_build_args="all"
+checksum=e74cb8ab118f344a15215aeb1cf66ef2a6992f49a1eca1c839fffefaa61ac485
+
+pre_configure() {
+	sh ./autogen.sh
+}

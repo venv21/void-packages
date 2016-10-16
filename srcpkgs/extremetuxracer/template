@@ -1,0 +1,21 @@
+# Template file for 'extremetuxracer'
+pkgname=extremetuxracer
+version=0.7.3
+revision=1
+wrksrc=etr-${version}
+only_for_archs="i686 x86_64"
+build_style=gnu-configure
+hostmakedepends="pkg-config gcc-c++"
+makedepends="SFML-devel glu-devel"
+depends="SFML glu"
+short_desc="High speed arctic racing game based on Tux Racer"
+maintainer="venv21 <venv21@gmail.com>"
+license="GPL-2"
+homepage="https://sourceforge.net/projects/extremetuxracer/"
+distfiles="${SOURCEFORGE_SITE}/project/${pkgname}/releases/${version}/etr-${version}.tar.xz"
+checksum=9ed2c567fe296718523f4c3b2bb9531079dbfcaa486b3c4af552d70fe5f9e3d1
+
+pre_configure() {
+	sh ./autogen.sh
+}
+
